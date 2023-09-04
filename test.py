@@ -1,9 +1,9 @@
 from discord_webhook import DiscordWebhook, DiscordEmbed
 import requests
 
-webhook_url = ''
+webhook_url = 'https://discord.com/api/webhooks/1148166825117491230/H0RDfqq21EWMFmfCE15kGo24biXtCMX-lAvSjZDG1IoEl_m1EIbMtIhRu8T9WkKMGneL'
 EmbedBaslik = "quecytest" 
-ipadresi = ''
+ipadresi = '45.10.56.10'
 
 oyuncu_url = f"https://cs.center/api/{ipadresi}/27015/GetPlayerInfo"
 oyuncu_cevap = requests.get(oyuncu_url)
@@ -38,11 +38,9 @@ if oyuncu_cevap.status_code == 200 and sunucu_cevap.status_code == 200:
         sunucu_embed.add_embed_field(name="Oyuncu Sayısı", value=f"{oyuncu_sayisi}/{maks_oyuncu_sayisi}")
 
     final_embed = DiscordEmbed(title=EmbedBaslik, color=0x00ff00)
-    final_embed.add_embed_field(name="Sunucu Bilgileri", value="Sunucu Bilgileri:", inline=False)
     final_embed.add_embed_field(name="Sunucu Adı", value=sunucu_adi)
     final_embed.add_embed_field(name="Harita Adı", value=harita_adi)
     final_embed.add_embed_field(name="Oyuncu Sayısı", value=f"{oyuncu_sayisi}/{maks_oyuncu_sayisi}")
-    final_embed.add_embed_field(name="Oyuncu Bilgileri", value="Oyuncu Bilgileri:", inline=False)
     for oyuncu in oyuncu_bilgi:
         oyuncu_adi = oyuncu["Name"]
         oyuncu_fragman = oyuncu["Frags"]
