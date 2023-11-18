@@ -1,7 +1,7 @@
 from discord_webhook import DiscordWebhook, DiscordEmbed
 import requests
 
-webhook_url = 'https://discord.com/api/webhooks/1148166825117491230/H0RDfqq21EWMFmfCE15kGo24biXtCMX-lAvSjZDG1IoEl_m1EIbMtIhRu8T9WkKMGneL'
+webhook_url = 'webhook_giriniz'
 EmbedBaslik = "quecytest" 
 ipadresi = '45.10.56.10'
 
